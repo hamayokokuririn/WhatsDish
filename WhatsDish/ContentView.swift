@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var context
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            MealListView()
+                .tabItem {
+                    Label("食事リスト", systemImage: "tray.full")
+                }
+            IngredientListView()
+                .tabItem {
+                    Label("食材リスト", systemImage: "leaf")
+                }
+            MealSuggestionView()
+                .tabItem {
+                    Label("提案", systemImage: "lightbulb")
+                }
         }
-        .padding()
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

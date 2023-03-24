@@ -11,7 +11,34 @@
 		B58FEA0129CBDD2E00B1488A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA0029CBDD2E00B1488A /* ContentView.swift */; };
 		B58FEA0329CBDD2F00B1488A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58FEA0229CBDD2F00B1488A /* Assets.xcassets */; };
 		B58FEA0629CBDD2F00B1488A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58FEA0529CBDD2F00B1488A /* Preview Assets.xcassets */; };
+		B58FEA0E29CBE17E00B1488A /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA0D29CBE17E00B1488A /* AddMealView.swift */; };
+		B58FEA1329CBE3B400B1488A /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA1229CBE3B400B1488A /* MealListView.swift */; };
+		B58FEA1529CBE50000B1488A /* MealSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA1429CBE50000B1488A /* MealSuggestionView.swift */; };
+		B58FEA1829CBE9F700B1488A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58FEA1729CBE9F700B1488A /* CoreData.framework */; };
+		B58FEA1C29CBF1C600B1488A /* WhatsDish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA1A29CBF1C600B1488A /* WhatsDish.xcdatamodeld */; };
+		B58FEA2629CBFC3700B1488A /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA2529CBFC3700B1488A /* CoreDataController.swift */; };
+		B58FEA2B29CC22DC00B1488A /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA2A29CC22DC00B1488A /* OpenAIService.swift */; };
+		B58FEA2D29CD3CE100B1488A /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA2C29CD3CE100B1488A /* IngredientListView.swift */; };
+		B58FEA2F29CD3CF400B1488A /* AddIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA2E29CD3CF400B1488A /* AddIngredientView.swift */; };
+		B58FEA3129CD56F200B1488A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA3029CD56F200B1488A /* StringExtension.swift */; };
+		B58FEA3329CD710400B1488A /* RegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA3229CD710400B1488A /* RegularExpression.swift */; };
+		B58FEA3B29CD725B00B1488A /* WhatsDishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA3A29CD725B00B1488A /* WhatsDishTests.swift */; };
+		B58FEA4229CD72AC00B1488A /* RegularExpressionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA4129CD72AC00B1488A /* RegularExpressionServiceTests.swift */; };
+		B58FEA4429CD7E4C00B1488A /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA4329CD7E4C00B1488A /* RecipeDetailView.swift */; };
+		B58FEA4629CD7F4300B1488A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA4529CD7F4300B1488A /* Recipe.swift */; };
+		B58FEA4829CD98FF00B1488A /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = B58FEA4729CD98FF00B1488A /* Secrets.plist */; };
+		B58FEA4A29CD99C900B1488A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA4929CD99C900B1488A /* Secrets.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B58FEA3C29CD725B00B1488A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B58FE9F329CBDD2E00B1488A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B58FE9FA29CBDD2E00B1488A;
+			remoteInfo = WhatsDish;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B58FE9FB29CBDD2E00B1488A /* WhatsDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +46,36 @@
 		B58FEA0029CBDD2E00B1488A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B58FEA0229CBDD2F00B1488A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58FEA0529CBDD2F00B1488A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B58FEA0D29CBE17E00B1488A /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
+		B58FEA1229CBE3B400B1488A /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
+		B58FEA1429CBE50000B1488A /* MealSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSuggestionView.swift; sourceTree = "<group>"; };
+		B58FEA1729CBE9F700B1488A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B58FEA1B29CBF1C600B1488A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B58FEA2529CBFC3700B1488A /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		B58FEA2A29CC22DC00B1488A /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		B58FEA2C29CD3CE100B1488A /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
+		B58FEA2E29CD3CF400B1488A /* AddIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientView.swift; sourceTree = "<group>"; };
+		B58FEA3029CD56F200B1488A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B58FEA3229CD710400B1488A /* RegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpression.swift; sourceTree = "<group>"; };
+		B58FEA3829CD725B00B1488A /* WhatsDishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsDishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B58FEA3A29CD725B00B1488A /* WhatsDishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsDishTests.swift; sourceTree = "<group>"; };
+		B58FEA4129CD72AC00B1488A /* RegularExpressionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpressionServiceTests.swift; sourceTree = "<group>"; };
+		B58FEA4329CD7E4C00B1488A /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		B58FEA4529CD7F4300B1488A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		B58FEA4729CD98FF00B1488A /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		B58FEA4929CD99C900B1488A /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B58FE9F829CBDD2E00B1488A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B58FEA1829CBE9F700B1488A /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B58FEA3529CD725B00B1488A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,8 +88,11 @@
 		B58FE9F229CBDD2E00B1488A = {
 			isa = PBXGroup;
 			children = (
+				B58FEA4729CD98FF00B1488A /* Secrets.plist */,
 				B58FE9FD29CBDD2E00B1488A /* WhatsDish */,
+				B58FEA3929CD725B00B1488A /* WhatsDishTests */,
 				B58FE9FC29CBDD2E00B1488A /* Products */,
+				B58FEA1629CBE9F700B1488A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -44,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B58FE9FB29CBDD2E00B1488A /* WhatsDish.app */,
+				B58FEA3829CD725B00B1488A /* WhatsDishTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,10 +108,15 @@
 		B58FE9FD29CBDD2E00B1488A /* WhatsDish */ = {
 			isa = PBXGroup;
 			children = (
+				B58FEA2929CC22C700B1488A /* Service */,
+				B58FEA1929CBF1AC00B1488A /* CoreData */,
+				B58FEA0F29CBE2EA00B1488A /* DomainModel */,
+				B58FEA0C29CBE17000B1488A /* View */,
 				B58FE9FE29CBDD2E00B1488A /* WhatsDishApp.swift */,
 				B58FEA0029CBDD2E00B1488A /* ContentView.swift */,
 				B58FEA0229CBDD2F00B1488A /* Assets.xcassets */,
 				B58FEA0429CBDD2F00B1488A /* Preview Content */,
+				B58FEA3029CD56F200B1488A /* StringExtension.swift */,
 			);
 			path = WhatsDish;
 			sourceTree = "<group>";
@@ -65,6 +127,63 @@
 				B58FEA0529CBDD2F00B1488A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B58FEA0C29CBE17000B1488A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B58FEA0D29CBE17E00B1488A /* AddMealView.swift */,
+				B58FEA4329CD7E4C00B1488A /* RecipeDetailView.swift */,
+				B58FEA1229CBE3B400B1488A /* MealListView.swift */,
+				B58FEA1429CBE50000B1488A /* MealSuggestionView.swift */,
+				B58FEA2C29CD3CE100B1488A /* IngredientListView.swift */,
+				B58FEA2E29CD3CF400B1488A /* AddIngredientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B58FEA0F29CBE2EA00B1488A /* DomainModel */ = {
+			isa = PBXGroup;
+			children = (
+				B58FEA4529CD7F4300B1488A /* Recipe.swift */,
+			);
+			path = DomainModel;
+			sourceTree = "<group>";
+		};
+		B58FEA1629CBE9F700B1488A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B58FEA1729CBE9F700B1488A /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B58FEA1929CBF1AC00B1488A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B58FEA1A29CBF1C600B1488A /* WhatsDish.xcdatamodeld */,
+				B58FEA2529CBFC3700B1488A /* CoreDataController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B58FEA2929CC22C700B1488A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B58FEA2A29CC22DC00B1488A /* OpenAIService.swift */,
+				B58FEA4929CD99C900B1488A /* Secrets.swift */,
+				B58FEA3229CD710400B1488A /* RegularExpression.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B58FEA3929CD725B00B1488A /* WhatsDishTests */ = {
+			isa = PBXGroup;
+			children = (
+				B58FEA3A29CD725B00B1488A /* WhatsDishTests.swift */,
+				B58FEA4129CD72AC00B1488A /* RegularExpressionServiceTests.swift */,
+			);
+			path = WhatsDishTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +206,24 @@
 			productReference = B58FE9FB29CBDD2E00B1488A /* WhatsDish.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B58FEA3729CD725B00B1488A /* WhatsDishTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B58FEA3E29CD725B00B1488A /* Build configuration list for PBXNativeTarget "WhatsDishTests" */;
+			buildPhases = (
+				B58FEA3429CD725B00B1488A /* Sources */,
+				B58FEA3529CD725B00B1488A /* Frameworks */,
+				B58FEA3629CD725B00B1488A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B58FEA3D29CD725B00B1488A /* PBXTargetDependency */,
+			);
+			name = WhatsDishTests;
+			productName = WhatsDishTests;
+			productReference = B58FEA3829CD725B00B1488A /* WhatsDishTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +236,10 @@
 				TargetAttributes = {
 					B58FE9FA29CBDD2E00B1488A = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					B58FEA3729CD725B00B1488A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B58FE9FA29CBDD2E00B1488A;
 					};
 				};
 			};
@@ -116,6 +257,7 @@
 			projectRoot = "";
 			targets = (
 				B58FE9FA29CBDD2E00B1488A /* WhatsDish */,
+				B58FEA3729CD725B00B1488A /* WhatsDishTests */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +268,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58FEA0629CBDD2F00B1488A /* Preview Assets.xcassets in Resources */,
+				B58FEA4829CD98FF00B1488A /* Secrets.plist in Resources */,
 				B58FEA0329CBDD2F00B1488A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B58FEA3629CD725B00B1488A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +287,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58FEA1529CBE50000B1488A /* MealSuggestionView.swift in Sources */,
+				B58FEA4A29CD99C900B1488A /* Secrets.swift in Sources */,
+				B58FEA2629CBFC3700B1488A /* CoreDataController.swift in Sources */,
+				B58FEA4429CD7E4C00B1488A /* RecipeDetailView.swift in Sources */,
 				B58FEA0129CBDD2E00B1488A /* ContentView.swift in Sources */,
+				B58FEA1C29CBF1C600B1488A /* WhatsDish.xcdatamodeld in Sources */,
+				B58FEA2B29CC22DC00B1488A /* OpenAIService.swift in Sources */,
+				B58FEA2F29CD3CF400B1488A /* AddIngredientView.swift in Sources */,
+				B58FEA1329CBE3B400B1488A /* MealListView.swift in Sources */,
+				B58FEA0E29CBE17E00B1488A /* AddMealView.swift in Sources */,
+				B58FEA4629CD7F4300B1488A /* Recipe.swift in Sources */,
+				B58FEA3329CD710400B1488A /* RegularExpression.swift in Sources */,
 				B58FE9FF29CBDD2E00B1488A /* WhatsDishApp.swift in Sources */,
+				B58FEA3129CD56F200B1488A /* StringExtension.swift in Sources */,
+				B58FEA2D29CD3CE100B1488A /* IngredientListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B58FEA3429CD725B00B1488A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B58FEA4229CD72AC00B1488A /* RegularExpressionServiceTests.swift in Sources */,
+				B58FEA3B29CD725B00B1488A /* WhatsDishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B58FEA3D29CD725B00B1488A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B58FE9FA29CBDD2E00B1488A /* WhatsDish */;
+			targetProxy = B58FEA3C29CD725B00B1488A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B58FEA0729CBDD2F00B1488A /* Debug */ = {
@@ -317,6 +497,42 @@
 			};
 			name = Release;
 		};
+		B58FEA3F29CD725B00B1488A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = k.saitoh0526.WhatsDishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsDish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WhatsDish";
+			};
+			name = Debug;
+		};
+		B58FEA4029CD725B00B1488A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39WWX2FY3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = k.saitoh0526.WhatsDishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsDish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WhatsDish";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,7 +554,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B58FEA3E29CD725B00B1488A /* Build configuration list for PBXNativeTarget "WhatsDishTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B58FEA3F29CD725B00B1488A /* Debug */,
+				B58FEA4029CD725B00B1488A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B58FEA1A29CBF1C600B1488A /* WhatsDish.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B58FEA1B29CBF1C600B1488A /* Model.xcdatamodel */,
+			);
+			currentVersion = B58FEA1B29CBF1C600B1488A /* Model.xcdatamodel */;
+			path = WhatsDish.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B58FE9F329CBDD2E00B1488A /* Project object */;
 }
