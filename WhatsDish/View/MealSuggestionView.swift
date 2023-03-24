@@ -19,11 +19,15 @@ struct MealSuggestionView: View {
     )
     private var ingredients: FetchedResults<Ingredient>
     
-    @State private var mealSuggestion: String = ""
+    @State private var suggestedRecipes: [Recipe] = []
     @State private var isFetching: Bool = false
     @State private var selectedRecipe: Recipe?
     
     private let openAIService = OpenAIService()
+    
+    init(mealSuggestion: [Recipe] = []) {
+        _suggestedRecipes = State(initialValue: mealSuggestion)
+    }
 
     var body: some View {
         VStack {
@@ -31,23 +35,12 @@ struct MealSuggestionView: View {
                 ProgressView("提案を取得中...")
             } else {
                 Spacer()
-                if mealSuggestion.isEmpty {
-                    Text("食事提案がまだありません。")
+                if suggestedRecipes.isEmpty {
+                    Text("食事リストで食べたことのない料理を提案します。")
+                    Text("食材リストで作れる料理を提案します。")
                 } else {
                     Text("今日の食事提案")
-                    let recipeList = RegularExpressionService.extractRecipeTitles(from: mealSuggestion)
-                    List {
-                        ForEach(recipeList) { recipe in
-                            Button(action: {
-                                selectedRecipe = recipe
-                            }) {
-                                Text(recipe.title)
-                            }
-                        }
-                    }
-                    .sheet(item: $selectedRecipe) { recipe in
-                        RecipeDetailView(recipe: recipe)
-                    }
+                    RecipeListView(suggestedRecipes: $suggestedRecipes)
                 }
 
                 Spacer()
@@ -65,7 +58,8 @@ struct MealSuggestionView: View {
         isFetching = true
         do {
             let suggestion = try await openAIService.generateMealSuggestion(meals: Array(meals), ingredients: Array(ingredients))
-            mealSuggestion = suggestion
+            suggestedRecipes = suggestion
+            
         } catch {
             print("Error fetching meal suggestion: \(error)")
         }
@@ -75,6 +69,8 @@ struct MealSuggestionView: View {
 
 struct MealSuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        MealSuggestionView()
+        MealSuggestionView(mealSuggestion: [Recipe(title: "カレー",
+                                                   catchphrase: "みんな大好き",
+                                                   score: 3.0)])
     }
 }

@@ -47,7 +47,7 @@ struct RecipeDetailView: View {
 
 struct RecipeDetailView_Preview: PreviewProvider {
     static var previews: some View {
-        RecipeDetailView(recipe: Recipe(title: "カレー", detail: nil))
+        RecipeDetailView(recipe: Recipe(title: "カレー", catchphrase: "みんな大好き", score: 4.5))
     }
 }
 

@@ -16,7 +16,7 @@ class OpenAIService {
         case parsingError
     }
 
-    func generateMealSuggestion(meals: [Meal], ingredients: [Ingredient]) async throws -> String {
+    func generateMealSuggestion(meals: [Meal], ingredients: [Ingredient]) async throws -> [Recipe] {
         let messages = createMessages(meals: meals, ingrediens: ingredients)
         let requestData = createRequestData(messages: messages)
         
@@ -31,7 +31,10 @@ class OpenAIService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let (data, _) = try await URLSession.shared.data(for: request)
-        return try parseResponse(data: data)
+        let response = try parseResponse(data: data)
+        
+        return try RegularExpressionService.extractRecipeTitles(from: response)
+        
     }
     
     private func createMessages(meals: [Meal], ingrediens: [Ingredient]) -> [[String: String]] {
@@ -39,11 +42,19 @@ class OpenAIService {
         let ingredientsDescription = makeIngredientsDescription(ingredients: ingrediens)
         let userMessage: [String: String] = [
             "role": "user",
-            "content": """
-以下の食事履歴があります: \(mealsDescription)。これらとは異なるおすすめの料理を提案してください。
-また提案の際には、次の食材を使用するレシピになるように考慮してください。食材はこちらです：\(ingredientsDescription)
-出力はハイフンから始まる箇条書きで、料理名のみ含めるようにお願いします。
-"""
+            "content":
+        """
+        以下の食事履歴があります: \(mealsDescription)。これらとは異なるおすすめの料理を提案してください。
+        また提案の際には、次の食材を使用するレシピになるように考慮してください。食材はこちらです：\(ingredientsDescription)
+        出力はjson文字列でお願いします。料理名(title)、料理したくなるようなキャッチフレーズ(catchphrase)、おすすめ度(score)を五段階で何点かを箇条書きで示してください。以下に例を示します。
+        [
+          {
+            "name": "タコライス",
+            "catchphrase": "沖縄の風を感じるエキゾチックな和洋折衷料理",
+            "score": 4.2
+          }
+        ]
+        """
         ]
         
         let systemMessage: [String: String] = [

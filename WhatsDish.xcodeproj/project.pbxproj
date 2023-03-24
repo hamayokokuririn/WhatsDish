@@ -28,6 +28,7 @@
 		B58FEA4629CD7F4300B1488A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA4529CD7F4300B1488A /* Recipe.swift */; };
 		B58FEA4829CD98FF00B1488A /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = B58FEA4729CD98FF00B1488A /* Secrets.plist */; };
 		B58FEA4A29CD99C900B1488A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA4929CD99C900B1488A /* Secrets.swift */; };
+		B58FEA4C29CDE2B300B1488A /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FEA4B29CDE2B300B1488A /* RecipeListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		B58FEA4529CD7F4300B1488A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		B58FEA4729CD98FF00B1488A /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		B58FEA4929CD99C900B1488A /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		B58FEA4B29CDE2B300B1488A /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				B58FEA4329CD7E4C00B1488A /* RecipeDetailView.swift */,
 				B58FEA1229CBE3B400B1488A /* MealListView.swift */,
 				B58FEA1429CBE50000B1488A /* MealSuggestionView.swift */,
+				B58FEA4B29CDE2B300B1488A /* RecipeListView.swift */,
 				B58FEA2C29CD3CE100B1488A /* IngredientListView.swift */,
 				B58FEA2E29CD3CF400B1488A /* AddIngredientView.swift */,
 			);
@@ -301,6 +304,7 @@
 				B58FEA3329CD710400B1488A /* RegularExpression.swift in Sources */,
 				B58FE9FF29CBDD2E00B1488A /* WhatsDishApp.swift in Sources */,
 				B58FEA3129CD56F200B1488A /* StringExtension.swift in Sources */,
+				B58FEA4C29CDE2B300B1488A /* RecipeListView.swift in Sources */,
 				B58FEA2D29CD3CE100B1488A /* IngredientListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
