@@ -24,6 +24,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("提案", systemImage: "lightbulb")
                 }
+            BookmarkListView()
+                .tabItem {
+                    Label("ブックマーク", systemImage: "bookmark.fill")
+                }
         }
     }
 }

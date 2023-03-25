@@ -34,7 +34,7 @@ struct RecipeListView: View {
             }
             .navigationTitle("料理リスト")
             .sheet(item: $selectedRecipe) { recipe in
-                RecipeDetailView(recipe: recipe)
+                RecipeDetailView(recipe: recipe, showBookmarkButton: true)
             }
         }
     }
