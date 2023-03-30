@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RegexBuilder
 
 enum RegularExpressionService {
     static func extractRecipeTitles(from suggestionJSON: String) throws -> [Recipe] {
@@ -14,5 +15,18 @@ enum RegularExpressionService {
             return recipes
         }
         return []
+    }
+    
+    static func extractJSONString(from text: String) -> String {
+        let pattern = "\\[[^\\]]*\\]"
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let range = NSRange(location: 0, length: text.utf16.count)
+        let match = regex.firstMatch(in: text, options: [], range: range)
+        if let matchRange = match?.range {
+            let jsonSubstring = text[Range(matchRange, in: text)!]
+            print(jsonSubstring)
+            return String(jsonSubstring)
+        }
+        return ""
     }
 }

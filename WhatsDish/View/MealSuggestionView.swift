@@ -22,6 +22,7 @@ struct MealSuggestionView: View {
     @State private var suggestedRecipes: [Recipe] = []
     @State private var isFetching: Bool = false
     @State private var selectedRecipe: Recipe?
+    @State private var addText: String = ""
     
     private let openAIService = OpenAIService()
     
@@ -36,6 +37,7 @@ struct MealSuggestionView: View {
             } else {
                 Spacer()
                 if suggestedRecipes.isEmpty {
+                    Spacer()
                     Text("食事リストで食べたことのない料理を提案します。")
                     Text("食材リストで作れる料理を提案します。")
                 } else {
@@ -44,6 +46,10 @@ struct MealSuggestionView: View {
                 }
 
                 Spacer()
+                Form {
+                    Text("追加の要望を入力できます")
+                    TextField("要望", text: $addText)
+                }
                 Button("食事提案を取得") {
                     Task {
                         await fetchMealSuggestion()                        
@@ -57,9 +63,7 @@ struct MealSuggestionView: View {
     private func fetchMealSuggestion() async {
         isFetching = true
         do {
-            let suggestion = try await openAIService.generateMealSuggestion(meals: Array(meals), ingredients: Array(ingredients))
-            suggestedRecipes = suggestion
-            
+            suggestedRecipes = try await openAIService.generateMealSuggestion(meals: Array(meals), ingredients: Array(ingredients), addMessage: addText)
         } catch {
             print("Error fetching meal suggestion: \(error)")
         }
@@ -69,8 +73,11 @@ struct MealSuggestionView: View {
 
 struct MealSuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        MealSuggestionView(mealSuggestion: [Recipe(title: "カレー",
-                                                   catchphrase: "みんな大好き",
-                                                   score: 3.0)])
+        Group {
+            MealSuggestionView(mealSuggestion: [Recipe(title: "カレー",
+                                                       catchphrase: "みんな大好き",
+                                                       score: 3.0)])
+            MealSuggestionView(mealSuggestion: [])
+        }
     }
 }

@@ -23,11 +23,14 @@ struct RecipeDetailView: View {
         VStack {
             Text(recipe.title)
                 .font(.title)
+            Text(recipe.catchphrase)
+            Text("おすすめ度: \(recipe.score, specifier: "%.1f")")
             Spacer()
             if let recipeDetail {
                 ScrollView {
                     Text(recipeDetail)
                 }
+                .padding()
             } else {
                 ProgressView("レシピを取得中...")
             }

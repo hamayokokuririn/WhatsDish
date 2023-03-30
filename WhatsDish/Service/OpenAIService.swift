@@ -16,8 +16,8 @@ class OpenAIService {
         case parsingError
     }
 
-    func generateMealSuggestion(meals: [Meal], ingredients: [Ingredient]) async throws -> [Recipe] {
-        let messages = createMessages(meals: meals, ingrediens: ingredients)
+    func generateMealSuggestion(meals: [Meal], ingredients: [Ingredient], addMessage: String) async throws -> [Recipe] {
+        let messages = createMessages(meals: meals, ingrediens: ingredients, addMessage: addMessage)
         let requestData = createRequestData(messages: messages)
         
         guard let url = URL(string: apiURL) else {
@@ -32,12 +32,12 @@ class OpenAIService {
         
         let (data, _) = try await URLSession.shared.data(for: request)
         let response = try parseResponse(data: data)
-        
-        return try RegularExpressionService.extractRecipeTitles(from: response)
+        let jsonString = RegularExpressionService.extractJSONString(from: response)
+        return try RegularExpressionService.extractRecipeTitles(from: jsonString)
         
     }
     
-    private func createMessages(meals: [Meal], ingrediens: [Ingredient]) -> [[String: String]] {
+    private func createMessages(meals: [Meal], ingrediens: [Ingredient], addMessage: String) -> [[String: String]] {
         let mealsDescription = makeMealsDescription(meals: meals)
         let ingredientsDescription = makeIngredientsDescription(ingredients: ingrediens)
         let userMessage: [String: String] = [
@@ -46,7 +46,8 @@ class OpenAIService {
         """
         以下の食事履歴があります: \(mealsDescription)。これらとは異なるおすすめの料理を提案してください。
         また提案の際には、次の食材を使用するレシピになるように考慮してください。食材はこちらです：\(ingredientsDescription)
-        出力はjson文字列でお願いします。料理名(title)、料理したくなるようなキャッチフレーズ(catchphrase)、おすすめ度(score)を五段階で何点かを箇条書きで示してください。以下に例を示します。
+        また追加の要望はこちらです。\(addMessage)。
+        必ずjson文字列のみでお願いします。json形式以外の文章は含めないでください。内容は、料理名(title)、料理したくなるようなキャッチフレーズ(catchphrase)、おすすめ度(score)を五段階で何点かです。５つまでjson形式の配列で示してください。以下に例を示します。
         [
           {
             "name": "タコライス",
@@ -59,7 +60,7 @@ class OpenAIService {
         
         let systemMessage: [String: String] = [
             "role": "system",
-            "content": "あなたは一流の料理研究家です。人気のある料理を積極的に提案します。また、忙しい家事の合間に作れるような作りやすい食事の提案をします。"
+            "content": "あなたは一流の料理研究家の情報をもつAPIサーバーです。人気のある料理を積極的に提案します。また、なかなか思いつかない料理を提案します。返答には、APIサーバーが返却するように、json文字列のみを返してください。"
         ]
         
         return [systemMessage, userMessage]
@@ -102,13 +103,14 @@ class OpenAIService {
             throw OpenAIError.parsingError
         }
         print("From GPT😀: \(content)")
+        
         return content.trimmingCharacters(in: .whitespaces)
     }
     
     func fetchRecipe(for recipe: Recipe) async throws -> String {
         let message: [String: String] = [
             "role": "user",
-            "content": "あなたは一流の料理研究家です。初心者にもわかりやすく料理を説明します。\(recipe.title)のレシピを教えてください。まず必要な材料を示し、次に手順を箇条書きで具体的にお願いします。"
+            "content": "あなたは一流の料理研究家です。初心者にもわかりやすく料理を説明します。\(recipe.title)のレシピを教えてください。キャッチフレーズは\(recipe.catchphrase)です。まず必要な材料を示し、次に手順を箇条書きで具体的にお願いします。"
         ]
         let requestData = createRequestData(messages: [message])
         guard let url = URL(string: apiURL) else {
